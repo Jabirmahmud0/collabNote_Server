@@ -47,6 +47,8 @@ const noteSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
 
@@ -60,10 +62,12 @@ noteSchema.virtual('excerpt').get(function () {
   if (!this.content || !this.content.ops) return '';
 
   const textOps = this.content.ops
-    .filter((op) => typeof op.insert === 'string')
-    .map((op) => op.insert)
-    .join('');
+    .filter((op) => op && typeof op.insert === 'string' && op.insert.trim())
+    .map((op) => op.insert.trim())
+    .join(' ');
 
+  if (!textOps) return '';
+  
   return textOps.slice(0, 100) + (textOps.length > 100 ? '...' : '');
 });
 
