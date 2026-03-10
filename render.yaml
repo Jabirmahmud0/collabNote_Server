@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json.schemastore.org/render.json",
+  "services": [
+    {
+      "type": "web",
+      "name": "collabnote-api",
+      "env": "node",
+      "buildCommand": "npm install",
+      "startCommand": "npm start",
+      "envVars": [
+        {
+          "key": "NODE_ENV",
+          "value": "production"
+        },
+        {
+          "key": "PORT",
+          "value": "5000"
+        },
+        {
+          "key": "MONGO_URI",
+          "sync": false
+        },
+        {
+          "key": "JWT_SECRET",
+          "generateValue": true
+        },
+        {
+          "key": "JWT_REFRESH_SECRET",
+          "generateValue": true
+        },
+        {
+          "key": "GEMINI_API_KEY",
+          "sync": false
+        },
+        {
+          "key": "CLOUDINARY_CLOUD_NAME",
+          "sync": false
+        },
+        {
+          "key": "CLOUDINARY_API_KEY",
+          "sync": false
+        },
+        {
+          "key": "CLOUDINARY_API_SECRET",
+          "sync": false
+        },
+        {
+          "key": "CLIENT_URL",
+          "sync": false
+        }
+      ]
+    }
+  ]
+}

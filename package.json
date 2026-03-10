@@ -1,26 +1,34 @@
 {
-  "name": "server",
+  "name": "collabnote-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Real-time collaborative notes platform backend",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
+  "keywords": [
+    "notes",
+    "collaboration",
+    "real-time",
+    "socket.io",
+    "express",
+    "mongodb"
+  ],
+  "author": "Jabir Mahmud",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jabirmahmud0/collabNote_Server.git"
+    "url": "https://github.com/Jabirmahmud0/collabnote"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Jabirmahmud0/collabNote_Server/issues"
+  "engines": {
+    "node": ">=18.0.0"
   },
-  "homepage": "https://github.com/Jabirmahmud0/collabNote_Server#readme",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.9.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
